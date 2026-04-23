@@ -1,0 +1,335 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #1a1a1a;
+  --bg-card: #333333;
+  --text-color: #ffffff;
+  --border-color: #ffffff;
+  --detail: hsl(220, 50%, 50%); /* O seu novo tom de azul refinado */
+}
+
+body.sadsocket-theme {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Estrutura Geral */
+.container {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--detail); /* Detalhe azul na separação */
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  border-bottom: 2px solid var(--detail); /* Linha divisória em azul */
+  background-color: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transition:
+    transform 0.2s ease-in-out,
+    color 0.2s;
+  cursor: pointer;
+}
+
+.logo-container h1:hover {
+  transform: rotate(-3deg) scale(1.05);
+  color: var(--detail);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--detail);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--detail);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+#hero {
+  padding: 120px 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--detail);
+  background-color: var(--bg-color);
+}
+
+/* Título ganha uma sombra sólida base */
+#hero h2 {
+  font-size: 4.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text-color);
+  text-shadow: 4px 4px 0px var(--detail); /* Sombra 3D permanente */
+  transition:
+    color 0.3s ease-in-out,
+    -webkit-text-stroke 0.3s ease-in-out,
+    transform 0.3s ease;
+  cursor: default;
+}
+
+#hero h2:hover {
+  color: var(--detail);
+  -webkit-text-stroke: 2px var(--detail);
+  transform: scale(1.02) translate(-4px, -4px);
+  text-shadow: 8px 8px 0px var(--text-color);
+}
+
+#hero p {
+  font-size: 1.4rem;
+  text-transform: none;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Sobre a Empresa */
+.text-panel {
+  padding: 40px;
+  background-color: var(--bg-card);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--detail); /* Sombra base visível */
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.text-panel:hover {
+  border-color: var(--detail);
+  transform: translate(-8px, -8px);
+  box-shadow: 12px 12px 0px var(--detail); /* Estica a sombra */
+}
+
+.text-panel p {
+  font-size: 1.3rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-transform: none;
+  line-height: 1.8;
+}
+
+/* Projetos - Cards Brutalistas */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  border: 3px solid var(--border-color);
+  width: 420px;
+  padding: 40px;
+  background-color: var(--bg-card);
+  box-shadow: 6px 6px 0px var(--detail); /* Sombra base visível */
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translate(-10px, -10px);
+  box-shadow: 16px 16px 0px var(--detail);
+  border-color: var(--detail);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.tag {
+  color: var(--detail); /* Texto azul */
+  border: 2px solid var(--detail); /* Borda azul */
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.card:hover .tag {
+  background-color: var(--detail);
+  color: var(--text-color);
+}
+
+.card h4 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  text-transform: none;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Botões Estilo Retrô/Bruto */
+.project-link {
+  display: inline-block;
+  border: 3px solid var(--border-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  box-shadow: 4px 4px 0px var(--detail); /* Efeito 3D estático no botão */
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  text-align: center;
+  background-color: var(--bg-card);
+}
+
+.project-link:hover {
+  background-color: var(--detail);
+  color: var(--text-color);
+  border-color: var(--detail);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-color); /* Efeito de clique */
+}
+
+.project-link.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.status {
+  text-transform: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-top: 2px dashed var(--detail); /* Detalhe em linha tracejada colorida */
+  padding-top: 15px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Rodapé */
+footer {
+  padding: 50px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--bg-color);
+}
+
+.legal-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 10px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.legal-links a:hover {
+  background-color: var(--detail);
+  color: var(--text-color);
+}
+
+.copyright {
+  text-transform: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+  }
+  #hero h2 {
+    font-size: 3rem;
+  }
+  .card {
+    width: 100%;
+    padding: 30px;
+  }
+  .card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px var(--detail);
+  }
+  .text-panel:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 6px 6px 0px var(--detail);
+  }
+}
